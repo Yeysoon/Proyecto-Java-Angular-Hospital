@@ -9,6 +9,13 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoService } from './medicos/medico.service';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: '', redirectTo: '/medicos', pathMatch: 'full'},
+  {path: 'directivas', component: DirectivaComponent},
+  {path: 'medicos', component: MedicosComponent},
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +28,7 @@ import { MedicoService } from './medicos/medico.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [
     MedicoService,

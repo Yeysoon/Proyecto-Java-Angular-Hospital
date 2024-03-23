@@ -35,9 +35,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "assets/css/bootstrap.min.css",
             ],
-            "scripts": [],
+            "scripts": [
+              "assets/js/jquery-3.2.1.slim.min.js",
+              "assets/js/popper.min.js",
+              "assets/js/bootstrap.min.js",
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {

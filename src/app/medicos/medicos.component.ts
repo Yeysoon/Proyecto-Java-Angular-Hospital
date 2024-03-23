@@ -9,12 +9,12 @@ import { MedicoService } from './medico.service';
 })
 export class MedicosComponent implements OnInit{
 
-  medicos!: Medicos[];
+  medicos: Medicos[] | undefined;
   constructor(private medicoService: MedicoService ) {  }
 
   ngOnInit() {
     this.medicoService.getMedicos().subscribe(
-      medico => this.medicos = this.medicos
+      medicos => this.medicos = medicos
     );  
   }
 
