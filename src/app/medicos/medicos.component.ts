@@ -13,7 +13,9 @@ export class MedicosComponent implements OnInit{
   constructor(private medicoService: MedicoService ) {  }
 
   ngOnInit() {
-    this.medicos = this.medicoService.getMedicos();  
+    this.medicoService.getMedicos().subscribe(
+      medico => this.medicos = this.medicos
+    );  
   }
 
 }
