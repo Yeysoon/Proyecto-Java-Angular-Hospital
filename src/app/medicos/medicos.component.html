@@ -1,0 +1,29 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Medicos</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de Medicos</h5>
+        
+        <table class="table table-bordered table-strip">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>especialidad</th>
+                    <th>licencia</th>
+                    <th>cargo</th>
+                    <th>turno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let medico of medicos">
+                    <td>{{medico.id}}</td>
+                    <td>{{medico.nombre}}</td>
+                    <td>{{medico.especialidad}}</td>
+                    <td>{{medico.licencia}}</td>
+                    <td>{{medico.cargo}}</td>
+                    <td>{{medico.turno}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

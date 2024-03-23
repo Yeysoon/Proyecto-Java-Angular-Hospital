@@ -6,19 +6,25 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DirectivaComponent } from './directiva/directiva.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoService } from './medicos/medico.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DirectivaComponent
+    DirectivaComponent,
+    PacientesComponent,
+    MedicosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [
+    MedicoService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
