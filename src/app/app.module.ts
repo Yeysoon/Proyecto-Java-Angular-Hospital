@@ -10,6 +10,7 @@ import { PacientesComponent } from './pacientes/pacientes.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoService } from './medicos/medico.service';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
@@ -28,6 +29,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

@@ -1,8 +1,8 @@
 export class Medicos {
-    id!: number;
-    nombre!: string;
+    idMedicos!: number;
+    nombreMedico!: string;
     especialidad!: string;
-    licencia!: number;
+    licenciaMedica!: number;
     cargo!: string;
     turno!: string;
     
