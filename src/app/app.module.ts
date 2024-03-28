@@ -11,11 +11,14 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoService } from './medicos/medico.service';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './medicos/form.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
   {path: 'directivas', component: DirectivaComponent},
   {path: 'medicos', component: MedicosComponent},
+  {path: 'medicos/form', component: FormComponent}
 ];
 
 @NgModule({
@@ -25,11 +28,13 @@ const routes: Routes = [
     FooterComponent,
     DirectivaComponent,
     PacientesComponent,
-    MedicosComponent
+    MedicosComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [
