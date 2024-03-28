@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Medicos } from './medicos';
 import { Observable } from 'rxjs';
 //import { of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
 //import { response } from 'express';
 
@@ -11,6 +11,8 @@ import { map } from 'rxjs';
 export class MedicoService {
 
   private urlEndPoint: string = 'http://localhost:8080/api/listarMedicos'
+
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }
 
   getMedicos(): Observable<Medicos[]>{
@@ -18,5 +20,9 @@ export class MedicoService {
     return this.http.get(this.urlEndPoint).pipe(
       map((response) => response as Medicos[])
     );
+  }
+
+  create(medico: Medicos) : Observable<Medicos>{
+    return this.http.post<Medicos>(this.urlEndPoint, medico, {headers: this.httpHeaders})
   }
 }
