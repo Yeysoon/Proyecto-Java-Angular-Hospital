@@ -15,7 +15,7 @@ export class FormComponent implements OnInit{
 
   constructor(private medicoService: MedicoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute ){}
+    private activatedRoute: ActivatedRoute ){};
 
   ngOnInit(){
     this.cargarMedico()
@@ -24,9 +24,9 @@ export class FormComponent implements OnInit{
 
   cargarMedico():void{
     this.activatedRoute.params.subscribe(params =>{
-      let idMedicos = params['idMedicos']
-      if(idMedicos){
-        this.medicoService.getMedico(idMedicos).subscribe((medicos) => this.medicos = medicos) }
+      let id = params['id']
+      if(id){
+        this.medicoService.getMedico(id).subscribe((medicos) => this.medicos = medicos) }
     })
   }
 

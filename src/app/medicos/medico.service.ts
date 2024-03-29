@@ -8,7 +8,7 @@ import { map } from 'rxjs';
 export class MedicoService {
 
   private baseUrl: string = 'http://localhost:8080/api/';
-  private urlEndPoint: string = 'http://localhost:8080/api';
+  private urlEndPoint: string = 'http://localhost:8080/api/medicos';
 
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
@@ -26,8 +26,8 @@ export class MedicoService {
     return this.http.post<Medicos>(url, medico, {headers: this.httpHeaders});
   }
 
-  getMedico(idMedicos: number): Observable<Medicos>{
-    return this.http.get<Medicos>(`${this.urlEndPoint}/${idMedicos}`)
+  getMedico(id:number): Observable<Medicos>{
+    return this.http.get<Medicos>(`${this.urlEndPoint}/${id}`)
   }
 
 }
