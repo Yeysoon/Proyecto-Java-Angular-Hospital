@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class FormComponent implements OnInit{
 
   public medicos: Medicos = new Medicos()
-  public titulo: string = "Crear medicos"
+  public titulo: string = "Crear medico"
 
   constructor(private medicoService: MedicoService,
     private router: Router){};

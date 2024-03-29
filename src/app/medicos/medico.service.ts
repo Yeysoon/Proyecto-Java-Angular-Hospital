@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
-//import { MEDICOS } from './medicos.json';
 import { Medicos } from './medicos';
 import { Observable } from 'rxjs';
-//import { of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs';
-//import { response } from 'express';
 
 @Injectable()
 export class MedicoService {
 
-  private urlEndPoint: string = 'http://localhost:8080/api/listarMedicos'
+  private baseUrl: string = 'http://localhost:8080/api/';
 
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
+  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+
   constructor(private http: HttpClient) { }
 
-  getMedicos(): Observable<Medicos[]>{
-    //return of(MEDICOS);
-    return this.http.get(this.urlEndPoint).pipe(
+  getMedicos(): Observable<Medicos[]> {
+    const url = this.baseUrl + 'listarMedicos'; // URL específica para listar médicos
+    return this.http.get(url).pipe(
       map((response) => response as Medicos[])
     );
   }
 
-  create(medico: Medicos) : Observable<Medicos>{
-    return this.http.post<Medicos>(this.urlEndPoint, medico, {headers: this.httpHeaders})
+  create(medico: Medicos): Observable<Medicos> {
+    const url = this.baseUrl + 'guardarMedicos'; // URL específica para crear un médico
+    return this.http.post<Medicos>(url, medico, {headers: this.httpHeaders});
   }
 }
