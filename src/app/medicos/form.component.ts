@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Medicos } from './medicos';
 import { MedicoService } from './medico.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import swal from 'sweetalert2';
 
 @Component({
@@ -14,10 +14,22 @@ export class FormComponent implements OnInit{
   public titulo: string = "Crear medico"
 
   constructor(private medicoService: MedicoService,
-    private router: Router){};
+    private router: Router,
+    private activatedRoute: ActivatedRoute ){}
 
   ngOnInit(){
+    this.cargarMedico()
   }
+
+
+  cargarMedico():void{
+    this.activatedRoute.params.subscribe(params =>{
+      let idMedicos = params['idMedicos']
+      if(idMedicos){
+        this.medicoService.getMedico(idMedicos).subscribe((medicos) => this.medicos = medicos) }
+    })
+  }
+
 
   public create():void{
     this.medicoService.create(this.medicos)

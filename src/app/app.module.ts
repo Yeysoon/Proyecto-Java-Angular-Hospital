@@ -17,7 +17,8 @@ const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
   {path: 'directivas', component: DirectivaComponent},
   {path: 'medicos', component: MedicosComponent},
-  {path: 'medicos/form', component: FormComponent}
+  {path: 'medicos/form', component: FormComponent},
+  {path: 'medicos/form/:idMedicos', component: FormComponent}
 ];
 
 @NgModule({
