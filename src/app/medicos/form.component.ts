@@ -39,4 +39,12 @@ export class FormComponent implements OnInit{
     }
     )
   }
+
+  update(): void {
+    this.medicoService.update(this.medicos)
+    .subscribe(medicos=>{
+      this.router.navigate(['/medicos'])
+      swal.fire('Medico Actualizado',`Medicos ${medicos.nombreMedico} actualizado con exito!`,'success')
+    })
+  }
 }

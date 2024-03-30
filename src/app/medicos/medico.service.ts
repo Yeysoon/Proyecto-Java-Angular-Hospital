@@ -30,4 +30,8 @@ export class MedicoService {
     return this.http.get<Medicos>(`${this.urlEndPoint}/${id}`)
   }
 
+  update(medico : Medicos): Observable<Medicos>{
+    return this.http.put<Medicos>(`${this.urlEndPoint}/${medico.idMedicos}`,medico,{headers:this.httpHeaders})
+  }
+
 }
