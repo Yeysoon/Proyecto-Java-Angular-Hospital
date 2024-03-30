@@ -34,4 +34,8 @@ export class MedicoService {
     return this.http.put<Medicos>(`${this.urlEndPoint}/${medico.idMedicos}`,medico,{headers:this.httpHeaders})
   }
 
+  delete(idMedicos: number): Observable<Medicos>{
+    return this.http.delete<Medicos>(`${this.urlEndPoint}/${idMedicos}`,{headers:this.httpHeaders})
+  }
+
 }
