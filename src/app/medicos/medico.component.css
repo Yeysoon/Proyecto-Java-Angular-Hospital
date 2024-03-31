@@ -1,0 +1,9 @@
+.table-transparent {
+    background-color: transparent !important;
+    border-color: white !important; /* Cambiado a blanco */
+}
+
+.table-transparent th,
+.table-transparent td {
+    color: white; /* Cambiado a blanco */
+}
