@@ -1,0 +1,19 @@
+/* app.component.css */
+
+/* Estilos para el contenedor principal */
+.container {
+    position: relative; /* Establece una posición relativa */
+    z-index: 1; /* Asegura que el contenido esté por encima del video */
+  }
+  
+  /* Estilos para el video de fondo */
+  .video-background {
+    position: fixed; /* Fija el video en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    z-index: -1; /* Coloca el video detrás de los demás elementos */
+    object-fit: cover; /* Ajusta el tamaño del video para que cubra todo el contenedor */
+  }
+  
