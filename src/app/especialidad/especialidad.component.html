@@ -24,11 +24,11 @@
                     <td>{{especialidad.nombreEspecialidad}}</td>
                     <td>{{especialidad.descripcionEspecialidad}}</td>
                     <td>
-                        <button type="button" name="editar" [routerLink]="['/especialidades/form',especialidad.idEspecialidad]" class="btn btn-primary">Editar</button>
+                        <button type="button" name="editar" [routerLink]="['/especialidades/formEspecialidad',especialidad.idEspecialidad]" class="btn btn-primary">Editar</button>
                     </td>
 
                     <td>
-                        <button type="button" name="eliminar" (click)='delete(especialidad)' class="btn btn-danger btn-sm">Eliminar</button>
+                        <button type="button" name="eliminar" (click)='delete(especialidad)' class="btn btn-danger btn-sm"> Eliminar</button>
                     </td>
 
                 </tr>
