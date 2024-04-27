@@ -1,0 +1,38 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Especialidades</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de Especialidades</h5>
+        
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/especialidades/formEspecialidad']">Crear Especialidad</button>
+        </div>
+
+        <div *ngIf="especialidades.length == 0" class="alert alert-info">
+        No hay registros en la base de datos
+        </div>
+        <table class="table table-bordered table-striped transparent-table" *ngIf="especialidades.length>0">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombreEspecialidad</th>
+                    <th>descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let especialidad of especialidades">
+                    <td>{{especialidad.idEspecialidad}}</td>
+                    <td>{{especialidad.nombreEspecialidad}}</td>
+                    <td>{{especialidad.descripcionEspecialidad}}</td>
+                    <td>
+                        <button type="button" name="editar" [routerLink]="['/especialidades/form',especialidad.idEspecialidad]" class="btn btn-primary">Editar</button>
+                    </td>
+
+                    <td>
+                        <button type="button" name="eliminar" (click)='delete(especialidad)' class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

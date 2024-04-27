@@ -1,0 +1,12 @@
+.transparent-table {
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+    background-color: rgba(111, 111, 111, 0); /* Define un color de fondo con transparencia */
+  }
+  
+  .transparent-table th,
+  .transparent-table td {
+    border: 1px solid #ddd; /* Añade bordes a las celdas */
+    padding: 8px; /* Espaciado interno de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  
