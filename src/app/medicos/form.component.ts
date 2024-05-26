@@ -4,7 +4,6 @@ import { MedicoService } from './medico.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import swal from 'sweetalert2';
 import { EspecialidadService } from '../especialidad/especialidad.service';
-import { Especialidades } from '../especialidad/especialidades';
 
 @Component({
   selector: 'app-form',
@@ -14,16 +13,18 @@ export class FormComponent implements OnInit{
 
   public medicos: Medicos = new Medicos()
   public titulo: string = "Crear medico"
+  items: string[] = ['Elemento 1', 'Elemento 2', 'Elemento 3', 'Elemento 4'];
+
 
   constructor(private medicoService: MedicoService, private especialidadesService: EspecialidadService,
     private router: Router,
     private activatedRoute: ActivatedRoute ){};
 
-  especialidades : Especialidades[]=[];
+  
   ngOnInit(){
     this.cargarMedico()
     this.especialidadesService.getEspecialidades().subscribe(
-      data => this.especialidades = data
+      data => console.log(data)
     );  
     
   }
@@ -45,7 +46,7 @@ export class FormComponent implements OnInit{
       swal.fire('Nuevo Medico',`Medico ${this.medicos.nombreMedico} creado con exito!`, 'success')
     }
     )
-    console.log(this.especialidades)
+    
   }
 
   update(): void {
@@ -55,4 +56,5 @@ export class FormComponent implements OnInit{
       swal.fire('Medico Actualizado',`Medicos ${medicos.nombreMedico} actualizado con exito!`,'success')
     })
   }
+
 }

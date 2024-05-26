@@ -15,6 +15,8 @@ import { FormComponent } from './medicos/form.component';
 import { FormsModule } from '@angular/forms';
 import { EspecialidadComponent } from './especialidad/especialidad.component';
 import { FormEspecialidadComponent } from './especialidad/formEspecialidad.component';
+import { CommonModule } from '@angular/common'; 
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
@@ -44,7 +46,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CommonModule 
   ],
   providers: [
     MedicoService,
