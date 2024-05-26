@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Medicos } from './medicos';
 import { MedicoService } from './medico.service';
 import swal from 'sweetalert2';
+import { EspecialidadService } from '../especialidad/especialidad.service';
+import { Especialidades } from '../especialidad/especialidades';
 
 
 @Component({
@@ -11,12 +13,19 @@ import swal from 'sweetalert2';
 export class MedicosComponent implements OnInit{
 
   medicos!: Medicos[];
-  constructor(private medicoService: MedicoService ) {  }
+  constructor(private medicoService: MedicoService, private especialidadesService: EspecialidadService) {  }
 
+  especialidades! : Especialidades[];
   ngOnInit() {
     this.medicoService.getMedicos().subscribe(
       medicos => this.medicos = medicos
     );  
+
+    this.especialidadesService.getEspecialidades().subscribe(
+      data => this.especialidades = data
+    );  
+
+    console.log(this.especialidades)
   }
 
   delete(medico: Medicos): void{
