@@ -16,19 +16,26 @@ import { FormsModule } from '@angular/forms';
 import { EspecialidadComponent } from './especialidad/especialidad.component';
 import { FormEspecialidadComponent } from './especialidad/formEspecialidad.component';
 import { CommonModule } from '@angular/common';
-import { DoctoresComponent } from './doctores/doctores.component'; 
+import { DoctoresComponent } from './doctores/doctores.component';
+import { FormdoctoresComponent } from './doctores/formdoctores.component';
+import { DoctorService } from './doctores/doctores.service';
+
 
 
 const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
   {path: '', redirectTo: '/especialidades', pathMatch: 'full'},
+  {path: '', redirectTo: '/doctores', pathMatch: 'full'},
   {path: 'directivas', component: DirectivaComponent},
   {path: 'medicos', component: MedicosComponent},
   {path: 'medicos/form', component: FormComponent},
   {path: 'medicos/form/:id', component: FormComponent},
   {path: 'especialidades', component:EspecialidadComponent},
   {path: 'especialidades/formEspecialidad', component: FormEspecialidadComponent},
-  {path: 'especialidades/formEspecialidad/:id', component: FormComponent}
+  {path: 'especialidades/formEspecialidad/:id', component: FormEspecialidadComponent},
+  {path: 'doctores', component: DoctoresComponent},
+  {path: 'doctores/formdoctores', component: FormdoctoresComponent},
+  {path: 'doctores/formdoctores/:id', component: FormdoctoresComponent}
 ];
 
 @NgModule({
@@ -42,7 +49,8 @@ const routes: Routes = [
     FormComponent,
     EspecialidadComponent,
     FormEspecialidadComponent,
-    DoctoresComponent
+    DoctoresComponent,
+    FormdoctoresComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,7 @@ const routes: Routes = [
   providers: [
     MedicoService,
     EspecialidadService,
+    DoctorService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
