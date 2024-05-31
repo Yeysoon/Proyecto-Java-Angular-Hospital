@@ -13,8 +13,6 @@ export class FormComponent implements OnInit{
 
   public medicos: Medicos = new Medicos()
   public titulo: string = "Crear medico"
-  items: string[] = ['Elemento 1', 'Elemento 2', 'Elemento 3', 'Elemento 4'];
-
 
   constructor(private medicoService: MedicoService, private especialidadesService: EspecialidadService,
     private router: Router,
@@ -22,11 +20,7 @@ export class FormComponent implements OnInit{
 
   
   ngOnInit(){
-    this.cargarMedico()
-    this.especialidadesService.getEspecialidades().subscribe(
-      data => console.log(data)
-    );  
-    
+    this.cargarMedico()    
   }
 
 

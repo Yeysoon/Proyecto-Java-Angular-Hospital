@@ -9,24 +9,12 @@
                         <input type="text" class="form-control" [(ngModel)]="medicos.nombreMedico" name="nombreMedico">
                     </div>
                 </div>
-
                 <div class="form-group row">
                     <label for="especialidad" class="col-form-label col-sm-2">Especialidad</label>
                     <div class="col-sm-6">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="especialidad" data-bs-toggle="dropdown" aria-expanded="false">
-                            Especialidades
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li *ngFor="let item of items">
-                                <a class="dropdown-item">{{item}}</a>
-                            </li>
-                            </ul>
-                        </div>
-                        </div>
-        
+                        <input type="text" class="form-control" [(ngModel)]="medicos.especialidad" name="especialidad">
+                    </div>
                 </div>
-
                 <div class="form-group row">
                     <label for="licenciaMedica" class="col-form-label col-sm-2">Licencia</label>
                     <div class="col-sm-6">
