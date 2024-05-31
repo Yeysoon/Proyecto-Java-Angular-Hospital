@@ -1,0 +1,53 @@
+/* Añadir estos estilos en tu archivo CSS */
+
+/* Asegura que la tarjeta pueda expandirse */
+.custom-card {
+    width: 100%; /* Ajusta esto según tus necesidades, por ejemplo, 80% o un tamaño específico */
+    max-width: auto; /* Asegura que no exceda el ancho total del contenedor */
+    margin: auto; /* Centra la tarjeta si es necesario */
+    overflow-x: 100%; /* Permite desplazamiento horizontal si el contenido es más ancho */
+}
+
+/* Asegura que la tabla se expanda correctamente */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+    table-layout: auto; /* Permite que las columnas se ajusten automáticamente */
+}
+
+.table th, .table td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permite que el texto se ajuste dentro de las celdas */
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.btn {
+    margin: 5px;
+    padding: 5px 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.table td button {
+    width: 100%;
+    margin-bottom: 5px;
+}
