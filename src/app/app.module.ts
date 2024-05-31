@@ -19,6 +19,8 @@ import { CommonModule } from '@angular/common';
 import { DoctoresComponent } from './doctores/doctores.component';
 import { FormdoctoresComponent } from './doctores/formdoctores.component';
 import { DoctorService } from './doctores/doctores.service';
+import { FormPacientesComponent } from './pacientes/form-pacientes.component';
+import { PacienteService } from './pacientes/pacientes.service';
 
 
 
@@ -26,16 +28,24 @@ const routes: Routes = [
   {path: '', redirectTo: '/medicos', pathMatch: 'full'},
   {path: '', redirectTo: '/especialidades', pathMatch: 'full'},
   {path: '', redirectTo: '/doctores', pathMatch: 'full'},
+  {path: '', redirectTo: '/pacientes', pathMatch: 'full'},
   {path: 'directivas', component: DirectivaComponent},
+
   {path: 'medicos', component: MedicosComponent},
   {path: 'medicos/form', component: FormComponent},
   {path: 'medicos/form/:id', component: FormComponent},
+
   {path: 'especialidades', component:EspecialidadComponent},
   {path: 'especialidades/formEspecialidad', component: FormEspecialidadComponent},
   {path: 'especialidades/formEspecialidad/:id', component: FormEspecialidadComponent},
+
   {path: 'doctores', component: DoctoresComponent},
   {path: 'doctores/formdoctores', component: FormdoctoresComponent},
-  {path: 'doctores/formdoctores/:id', component: FormdoctoresComponent}
+  {path: 'doctores/formdoctores/:id', component: FormdoctoresComponent},
+
+  {path: 'pacientes', component: PacientesComponent},
+  {path: 'pacientes/form-pacientes', component: FormPacientesComponent},
+  {path: 'pacientes/form-pacientes/:id', component: FormPacientesComponent}
 ];
 
 @NgModule({
@@ -50,7 +60,8 @@ const routes: Routes = [
     EspecialidadComponent,
     FormEspecialidadComponent,
     DoctoresComponent,
-    FormdoctoresComponent
+    FormdoctoresComponent,
+    FormPacientesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +74,7 @@ const routes: Routes = [
     MedicoService,
     EspecialidadService,
     DoctorService,
+    PacienteService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
