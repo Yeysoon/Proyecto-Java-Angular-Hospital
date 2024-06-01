@@ -3,33 +3,33 @@ import { Medicos } from './medicos';
 import { MedicoService } from './medico.service';
 import swal from 'sweetalert2';
 import { EspecialidadService } from '../especialidad/especialidad.service';
-import { Especialidades } from '../especialidad/especialidades';
+import { Especialidades } from '../interfaces/especialidades';
 
 
 @Component({
   selector: 'app-medicos',
   templateUrl: './medicos.component.html'
 })
-export class MedicosComponent implements OnInit{
+export class MedicosComponent implements OnInit {
 
   medicos!: Medicos[];
-  constructor(private medicoService: MedicoService, private especialidadesService: EspecialidadService) {  }
+  constructor(private medicoService: MedicoService, private especialidadesService: EspecialidadService) { }
 
-  especialidades! : Especialidades[];
+  especialidades!: Especialidades[];
   ngOnInit() {
     this.medicoService.getMedicos().subscribe(
       medicos => this.medicos = medicos
-    );  
+    );
 
     this.especialidadesService.getEspecialidades().subscribe(
       data => this.especialidades = data
-    );  
+    );
 
     console.log(this.especialidades)
   }
 
-  delete(medico: Medicos): void{
-     swal.fire({
+  delete(medico: Medicos): void {
+    swal.fire({
       title: "Estás Seguro?",
       text: `Seguro que deseas eliminar al medico ${medico.nombreMedico}`,
       icon: "warning",
@@ -41,15 +41,15 @@ export class MedicosComponent implements OnInit{
       if (result.value) {
 
         this.medicoService.delete(medico.idMedicos).subscribe(
-          response =>{
+          response => {
             this.medicos = this.medicos.filter(med => med !== medico)
 
             swal.fire({
               title: 'Medico Eliminado!',
               text: `Medico ${medico.nombreMedico}  Eliminado con Exito`,
               icon: 'success'
-        })
-        })
+            })
+          })
       }
     });
   }

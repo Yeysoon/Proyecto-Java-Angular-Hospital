@@ -1,0 +1,33 @@
+<div class="container" style="padding: 5%;">
+    <h1 class="text-white">Listado de Doctores</h1>
+    <a routerLink="/doctores/create" class="btn btn-primary">Crear Doctor</a>
+    <hr>
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let doctor of doctores; let i = index">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-center align-items-center">
+                    <img src="assets/img/Doctores.png" alt="Logo de la Empresa" class="mr-2"
+                        style="width: 50px; height: 50px;">
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><strong>Id:</strong> {{doctor.idDoctores}}</p>
+                    <p class="card-text"><strong>Nombre:</strong> {{doctor.nombreMedico}}</p>
+                    <p class="card-text"><strong>Especialidad:</strong>
+                        <span *ngIf="doctor.especialidades">{{doctor.especialidades.nombreEspecialidad}}</span>
+                        <span *ngIf="!doctor.especialidades">N/A</span>
+                    </p>
+                    <p class="card-text"><strong>Licencia:</strong> {{doctor.licenciaMedica}}</p>
+                    <p class="card-text"><strong>Cargo:</strong> {{doctor.cargo}}</p>
+                    <p class="card-text"><strong>Turno:</strong> {{doctor.turno}}</p>
+                </div>
+                <div class="card-footer text-right">
+
+                    <button type="submit" class="btn btn-primary"
+                        [routerLink]="['/doctores/edit', doctor.idDoctores]">Edit</button>
+                    <button type="submit" class="btn btn-danger"
+                        (click)="deleteCustomer(doctor.idDoctores!)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

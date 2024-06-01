@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -16,37 +17,15 @@ import { FormsModule } from '@angular/forms';
 import { EspecialidadComponent } from './especialidad/especialidad.component';
 import { FormEspecialidadComponent } from './especialidad/formEspecialidad.component';
 import { CommonModule } from '@angular/common';
-import { DoctoresComponent } from './doctores/doctores.component';
-import { FormdoctoresComponent } from './doctores/formdoctores.component';
-import { DoctorService } from './doctores/doctores.service';
 import { FormPacientesComponent } from './pacientes/form-pacientes.component';
 import { PacienteService } from './pacientes/pacientes.service';
+import { Doctores } from './interfaces/doctores';
+import { DoctoresListComponent } from './doctores/doctores-list/doctores-list.component';
+import { DoctoresService } from './services/doctores.service';
+import { DoctoresEditComponent } from './doctores/doctores-edit/doctores-edit.component';
+import { DoctoresCreateComponent } from './doctores/doctores-create/DoctoresCreateComponent';
+import { EspecialidadListComponent } from './doctores/especialidad-list/especialidad-list.component';
 
-
-
-const routes: Routes = [
-  {path: '', redirectTo: '/medicos', pathMatch: 'full'},
-  {path: '', redirectTo: '/especialidades', pathMatch: 'full'},
-  {path: '', redirectTo: '/doctores', pathMatch: 'full'},
-  {path: '', redirectTo: '/pacientes', pathMatch: 'full'},
-  {path: 'directivas', component: DirectivaComponent},
-
-  {path: 'medicos', component: MedicosComponent},
-  {path: 'medicos/form', component: FormComponent},
-  {path: 'medicos/form/:id', component: FormComponent},
-
-  {path: 'especialidades', component:EspecialidadComponent},
-  {path: 'especialidades/formEspecialidad', component: FormEspecialidadComponent},
-  {path: 'especialidades/formEspecialidad/:id', component: FormEspecialidadComponent},
-
-  {path: 'doctores', component: DoctoresComponent},
-  {path: 'doctores/formdoctores', component: FormdoctoresComponent},
-  {path: 'doctores/formdoctores/:id', component: FormdoctoresComponent},
-
-  {path: 'pacientes', component: PacientesComponent},
-  {path: 'pacientes/form-pacientes', component: FormPacientesComponent},
-  {path: 'pacientes/form-pacientes/:id', component: FormPacientesComponent}
-];
 
 @NgModule({
   declarations: [
@@ -59,22 +38,24 @@ const routes: Routes = [
     FormComponent,
     EspecialidadComponent,
     FormEspecialidadComponent,
-    DoctoresComponent,
-    FormdoctoresComponent,
-    FormPacientesComponent
+    FormPacientesComponent,
+    DoctoresListComponent,
+    DoctoresEditComponent,
+    DoctoresCreateComponent,
+    EspecialidadListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    CommonModule 
+    AppRoutingModule,
+    CommonModule
   ],
   providers: [
     MedicoService,
     EspecialidadService,
-    DoctorService,
     PacienteService,
+    DoctoresService,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
