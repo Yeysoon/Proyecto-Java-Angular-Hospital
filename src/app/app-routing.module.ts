@@ -10,9 +10,11 @@ import { DoctoresEditComponent } from './doctores/doctores-edit/doctores-edit.co
 import { EspecialidadListComponent } from './doctores/especialidad-list/especialidad-list.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { FormPacientesComponent } from './pacientes/form-pacientes.component';
-import { DoctoresCreateComponent } from './doctores/doctores-create/DoctoresCreateComponent';
+import { DoctoresCreateComponent } from './doctores/doctores-create/doctores-create.component';
 
 const routes: Routes = [
+
+  { path: '', redirectTo: '', pathMatch: 'full' },
 
   { path: '', redirectTo: '/medicos', pathMatch: 'full' },
   { path: '', redirectTo: '/especialidades', pathMatch: 'full' },

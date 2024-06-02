@@ -1,15 +1,15 @@
-<div class="container" style="padding: 5%;">
+<div class="container" style="padding: 5%; background-color: rgb(54, 59, 59); border-radius: 10px; color: white;">
     <h1>Editar Doctor</h1>
     <hr>
     <form (ngSubmit)="update()">
-        <div class="form-group">
-            <label for="nombreMedico">Nombre Médico</label>
+        <div class="form-group mb-3">
+            <label for="nombreMedico" class="form-label">Nombre Médico</label>
             <input type="text" class="form-control" id="nombreMedico" placeholder="Enter nombre Medico"
                 [(ngModel)]="doctores.nombreMedico" name="nombreMedico">
         </div>
 
-        <div class="form-group">
-            <label for="especialidad">Especialidad</label>
+        <div class="form-group mb-3">
+            <label for="especialidad" class="form-label">Especialidad</label>
             <select name="especialidad" id="especialidad" class="form-select"
                 [(ngModel)]="doctores.especialidades.idEspecialidades">
                 <option value="" disabled selected>Selecciona una Especialidad</option>
@@ -19,25 +19,25 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="licenciaMedica">Licencia Médica</label>
+        <div class="form-group mb-3">
+            <label for="licenciaMedica" class="form-label">Licencia Médica</label>
             <input type="text" class="form-control" id="licenciaMedica" placeholder="Enter licencia Medica"
                 [(ngModel)]="doctores.licenciaMedica" name="licenciaMedica">
         </div>
 
-        <div class="form-group">
-            <label for="cargo">Cargo</label>
+        <div class="form-group mb-3">
+            <label for="cargo" class="form-label">Cargo</label>
             <input type="text" class="form-control" id="cargo" placeholder="Enter cargo" [(ngModel)]="doctores.cargo"
                 name="cargo">
         </div>
 
-        <div class="form-group">
-            <label for="turno">Turno</label>
+        <div class="form-group mb-3">
+            <label for="turno" class="form-label">Turno</label>
             <input type="text" class="form-control" id="turno" placeholder="Enter turno" [(ngModel)]="doctores.turno"
                 name="turno">
         </div>
 
         <br>
-        <button type="submit" class="btn btn-success">Editar Doctor</button>
+        <button type="submit" class="btn btn-primary">Editar Doctor</button>
     </form>
 </div>

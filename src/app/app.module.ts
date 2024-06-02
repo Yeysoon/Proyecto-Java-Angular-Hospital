@@ -23,7 +23,7 @@ import { Doctores } from './interfaces/doctores';
 import { DoctoresListComponent } from './doctores/doctores-list/doctores-list.component';
 import { DoctoresService } from './services/doctores.service';
 import { DoctoresEditComponent } from './doctores/doctores-edit/doctores-edit.component';
-import { DoctoresCreateComponent } from './doctores/doctores-create/DoctoresCreateComponent';
+import { DoctoresCreateComponent } from './doctores/doctores-create/doctores-create.component';
 import { EspecialidadListComponent } from './doctores/especialidad-list/especialidad-list.component';
 
 
