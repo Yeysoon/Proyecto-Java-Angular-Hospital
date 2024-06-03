@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EspecialidadListComponent } from './especialidad-list.component';
+import { EspecialidadListComponent } from './especialidadListComponent';
 
 describe('EspecialidadListComponent', () => {
   let component: EspecialidadListComponent;
@@ -10,8 +10,8 @@ describe('EspecialidadListComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [EspecialidadListComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(EspecialidadListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

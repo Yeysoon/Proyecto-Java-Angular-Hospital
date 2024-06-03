@@ -14,7 +14,7 @@
                 [(ngModel)]="doctores.especialidades.idEspecialidades">
                 <option value="" disabled selected>Seleccionar Especialidad</option>
                 <option *ngFor="let especialidad of especialidades" [value]="especialidad.idEspecialidad">{{
-                    especialidad.nombreEspecialidad }}</option>
+                    especialidad.idEspecialidad }}</option>
             </select>
         </div>
 

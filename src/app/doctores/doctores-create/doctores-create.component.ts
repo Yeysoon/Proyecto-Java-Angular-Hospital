@@ -40,7 +40,7 @@ export class DoctoresCreateComponent implements OnInit { // Added OnInit impleme
 
     save(): void {
         this.doctoresService.createDoctor(this.doctores).subscribe(() => {
-            this.router.navigate(['/doctores'])
+            this.router.navigate(['/create'])
         })
     }
 }

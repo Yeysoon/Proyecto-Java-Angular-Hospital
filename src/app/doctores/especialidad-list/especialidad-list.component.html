@@ -6,14 +6,12 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let especialidad of especialidades; let i=index">
-                <th>{{i+1}}</th>
+            <tr *ngFor="let especialidad of especialidades; let i = index">
+                <th>{{i + 1}}</th>
                 <th>{{especialidad.idEspecialidad}}</th>
-                <th>{{especialidad.nombreEspecialidad}}</th>
             </tr>
         </tbody>
     </table>

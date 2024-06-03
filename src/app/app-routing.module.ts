@@ -7,7 +7,7 @@ import { EspecialidadComponent } from './especialidad/especialidad.component';
 import { FormEspecialidadComponent } from './especialidad/formEspecialidad.component';
 import { DoctoresListComponent } from './doctores/doctores-list/doctores-list.component';
 import { DoctoresEditComponent } from './doctores/doctores-edit/doctores-edit.component';
-import { EspecialidadListComponent } from './doctores/especialidad-list/especialidad-list.component';
+import { EspecialidadListComponent } from './doctores/especialidad-list/especialidadListComponent';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { FormPacientesComponent } from './pacientes/form-pacientes.component';
 import { DoctoresCreateComponent } from './doctores/doctores-create/doctores-create.component';

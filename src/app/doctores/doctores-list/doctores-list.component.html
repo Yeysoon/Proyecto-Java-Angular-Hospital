@@ -12,7 +12,11 @@
                 <div class="card-body">
                     <p class="card-text"><strong>Id:</strong> {{doctor.idDoctores}}</p>
                     <p class="card-text"><strong>Nombre:</strong> {{doctor.nombreMedico}}</p>
-                    <p class="card-text"><strong>Especialidad:</strong>
+                    <p class="card-text"><strong>Id Especialidad:</strong>
+                        <span *ngIf="doctor.especialidades">{{doctor.especialidades.idEspecialidades}}</span>
+                        <span *ngIf="!doctor.especialidades">N/A</span>
+                    </p>
+                    <p class="card-text"><strong>Nombre Especialidad:</strong>
                         <span *ngIf="doctor.especialidades">{{doctor.especialidades.nombreEspecialidad}}</span>
                         <span *ngIf="!doctor.especialidades">N/A</span>
                     </p>

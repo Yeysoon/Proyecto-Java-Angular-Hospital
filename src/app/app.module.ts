@@ -24,7 +24,7 @@ import { DoctoresListComponent } from './doctores/doctores-list/doctores-list.co
 import { DoctoresService } from './services/doctores.service';
 import { DoctoresEditComponent } from './doctores/doctores-edit/doctores-edit.component';
 import { DoctoresCreateComponent } from './doctores/doctores-create/doctores-create.component';
-import { EspecialidadListComponent } from './doctores/especialidad-list/especialidad-list.component';
+import { EspecialidadListComponent } from './doctores/especialidad-list/especialidadListComponent';
 
 
 @NgModule({
